@@ -28,11 +28,15 @@ import NewEvent from './pages/NewEvent';
 import EditEvent from './pages/EditEvent';
 import RootOutlet from './pages/root';
 import Eventsroot from './pages/Eventsroot';
+import Error from './pages/Error';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/', element: <RootOutlet />, children: [
+      path: '/', 
+      element: <RootOutlet />, 
+      errorElement:<Error/>,
+      children: [
         { index: true, element: <Home /> }, //default path
         {
           path: 'events', element: <Eventsroot />, children: [
