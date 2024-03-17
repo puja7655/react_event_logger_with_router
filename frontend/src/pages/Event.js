@@ -57,7 +57,7 @@ export default function Event() {
 //Here we are creating a function and using it in app.js for loader which is being usd to fetch data in the above component.
 //In this way Event.js and App.js both are laener . we are outsourcing the loader and it is present where it is being used
 export async function Loader() {
-    const response = await fetch('http://localhost:8080/eventss');
+    const response = await fetch('http://localhost:8080/events');
     if (!response.ok) {
         throw json(
             { message: 'Unable fetch data' },
