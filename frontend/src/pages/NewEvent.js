@@ -24,6 +24,11 @@ export async function action({ request, params }) {
         },
         body: JSON.stringify(eventData)
     })
+
+    if(response===422){
+        return response; //returned data from action could be used in components and pages with the help of useActionData hook.It is helpful when we want to show backend validation (error from the backend instead of standard error page.) usefull in forms
+        //here we are getting this in EventForm.js
+    }
     if (!response.ok) {
         throw json({ message: "Could not save event" }, { status: 500 })
     }
