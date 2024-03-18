@@ -32,6 +32,7 @@ import EditEvent from './pages/EditEvent';
 import RootOutlet from './pages/root';
 import Eventsroot from './pages/Eventsroot';
 import Error from './pages/Error';
+import { action as manipulateEventAction } from './components/EventForm'
 
 function App() {
   const router = createBrowserRouter([
@@ -61,11 +62,16 @@ function App() {
                 },
                 {
                   path: 'edit',
-                  element: <EditEvent />
+                  element: <EditEvent />,
+                  action: manipulateEventAction
                 }
               ]
             },
-            { path: 'new', element: <NewEvent />, action: newEventAction }
+            {
+              path: 'new',
+              element: <NewEvent />,
+              action: manipulateEventAction
+            }
           ]
         }
 
